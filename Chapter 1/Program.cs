@@ -2,17 +2,19 @@
 
 class Program
 {
-    static void Change(ref int x)
+    static void GetValues(out int x, out int y)
     {
-        x = 100;
+        x = 10;
+        y = 20;
     }
 
     static void Main()
     {
-        int num = 10;
+        int a, b;   
 
-        Change(ref num);
+        GetValues(out a, out b);
 
-        Console.WriteLine(num);
+        Console.WriteLine(a);
+        Console.WriteLine(b);
     }
 }
