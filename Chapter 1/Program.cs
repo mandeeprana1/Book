@@ -1,14 +1,17 @@
-﻿try
+﻿
+class Employee
 {
-    int x = 10;
-    int y = 0;
-    int result = x / y;
-}
-catch (DivideByZeroException ex)
-{
-    Console.WriteLine($"Error: {ex.Message}");
-}
-finally
-{
-    Console.WriteLine("Execution completed.");
+    public string Name;
+    static void MAin()
+    {
+
+        Employee e1 = new Employee();
+        e1.Name = "Mandeep";
+
+        Employee e2 = e1;
+
+        e2.Name = "Rahu";
+        Console.WriteLine(e1.Name);
+        Console.WriteLine(e2.Name);
+    }
 }
