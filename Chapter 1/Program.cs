@@ -1,20 +1,18 @@
-﻿class Mathtest
+﻿using System;
+
+class Program
 {
-    public int getsquare(int x)
+    static void Change(ref int x)
     {
-        return x * x;
+        x = 100;
     }
-   public  static int getsquare1(int x)
+
+    static void Main()
     {
-        return x * x;
-    }
-}
-class program
-{
-    static void Main(string[] args)
-    {
-        Mathtest m = new Mathtest();
-      Console.WriteLine(m.getsquare(5));
-        Console.WriteLine(Mathtest.getsquare1(6));
+        int num = 10;
+
+        Change(ref num);
+
+        Console.WriteLine(num);
     }
 }
