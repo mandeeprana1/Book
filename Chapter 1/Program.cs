@@ -1,16 +1,4 @@
-﻿int Number = 2;
-switch (Number)
+﻿for(int i=1; i <= 10; i++)
 {
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-        Console.WriteLine("Working DAY ");
-        break;
-        case 5:
-        Console.WriteLine("The number is 5");
-        break;
-        default: Console.WriteLine("No Number Found");
-        break;
-
+    Console.WriteLine($"The square of {i} is {i * i}");
 }
