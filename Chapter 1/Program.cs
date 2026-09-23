@@ -1,8 +1,27 @@
-﻿int[] Array=new int[11] { 1, 2, 3, 4, 5 ,6,6,7,8,9,10 };
-foreach(int i in Array)
+﻿using System;
+
+class Calculator
 {
-    if(i% 2 == 0)
+    /// <summary>
+    /// Do integers ko add karta hai.
+    /// </summary>
+    /// <param name="a">Pehla integer number.</param>
+    /// <param name="b">Dusra integer number.</param>
+    /// <returns>Dono numbers ka sum return karta hai.</returns>
+    public int Add(int a, int b)
     {
-        Console.WriteLine(i);
+        return a + b;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Calculator calc = new Calculator();
+
+        int result = calc.Add(10, 20);
+
+        Console.WriteLine("Sum = " + result);
     }
 }
