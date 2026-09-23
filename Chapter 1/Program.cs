@@ -1,31 +1,14 @@
-﻿using System;
-
- interface IPAy  {
-
-    public void Pay() { }
-
-}
-class CreditCard : IPAy
+﻿try
 {
-    public void Pay()
-    {
-        Console.WriteLine("Paying with credit card");
-    }
+    int x = 10;
+    int y = 0;
+    int result = x / y;
 }
-class PayPal : IPAy
+catch (DivideByZeroException ex)
 {
-    public void Pay()
-    {
-        Console.WriteLine("Paying with PayPal");
-    }
+    Console.WriteLine($"Error: {ex.Message}");
 }
-class Program
+finally
 {
-    static void Main()
-    {
-        IPAy p1=new PayPal();
-        p1.Pay();
-        IPAy p2=new CreditCard();
-        p2.Pay();
-
-    } }
+    Console.WriteLine("Execution completed.");
+}
