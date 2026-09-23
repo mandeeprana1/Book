@@ -1,21 +1,20 @@
-﻿class Employee
+﻿class Mathtest
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public double Salary { get; set; }
-    public void Display()
+    public int getsquare(int x)
     {
-        Console.WriteLine("Employee ID:{0}, Name: {1}, Salary: {2}", Id, Name, Salary);
+        return x * x;
+    }
+   public  static int getsquare1(int x)
+    {
+        return x * x;
     }
 }
-class Program
+class program
 {
     static void Main(string[] args)
     {
-        Employee emp = new Employee();
-        emp.Id = 101;
-        emp.Name = "John Doe";
-        emp.Salary = 50000.0;
-        emp.Display();
+        Mathtest m = new Mathtest();
+      Console.WriteLine(m.getsquare(5));
+        Console.WriteLine(Mathtest.getsquare1(6));
     }
 }
