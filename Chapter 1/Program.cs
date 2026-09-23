@@ -1,31 +1,6 @@
-﻿using System;
-
-namespace Company.HR
+﻿int sum=0;
+for(int i = 0; i < 5; i++)
 {
-    class Employee : IDisposable
-    {
-        public string Name { get; set; } = "";
-
-        public void Display()
-        {
-            Console.WriteLine("Employee Name: " + Name);
-        }
-
-        public void Dispose()
-        {
-            
-        }
-    }
+    sum += i;
 }
-
-class Program
-{
-    static void Main()
-    {
-        using (Company.HR.Employee emp = new Company.HR.Employee())
-        {
-            emp.Name = "Rahul";
-            emp.Display();
-        }
-    }
-}
+Console.WriteLine("Sum: " + sum);
