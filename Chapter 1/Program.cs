@@ -1,5 +1,6 @@
-﻿Console.WriteLine("Enter Your Name: ");
-string name = Console.ReadLine();
-Console.WriteLine("Enter Your Age: ");
-int age = int.Parse(Console.ReadLine());
-Console.WriteLine("Hello, " + name + "! You are " + age + " years old.");
+﻿int a = 10;
+double b = 20.5;
+bool c = true;
+string d = "Hello, World!";
+Console.WriteLine(d);
+Console.WriteLine($"Integer: {a}, Double: {b}, Boolean: {c}");
