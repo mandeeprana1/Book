@@ -2,13 +2,18 @@
 
 class Program
 {
-    static void FullName(string firstName, string lastName)
+    static void Display(string name, int age = 18)
     {
-        Console.WriteLine(firstName + " " + lastName);
+        Console.WriteLine("Name: " + name);
+        Console.WriteLine("Age: " + age);
     }
 
     static void Main()
     {
-        FullName(lastName: "Kumar", firstName: "Ram");
+      
+        Display("Ram");
+
+      
+        Display("Shyam", 25);
     }
 }
