@@ -1,27 +1,21 @@
-﻿using System;
-
-class Calculator
+﻿class Employee
 {
-    /// <summary>
-    /// Do integers ko add karta hai.
-    /// </summary>
-    /// <param name="a">Pehla integer number.</param>
-    /// <param name="b">Dusra integer number.</param>
-    /// <returns>Dono numbers ka sum return karta hai.</returns>
-    public int Add(int a, int b)
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public double Salary { get; set; }
+    public void Display()
     {
-        return a + b;
+        Console.WriteLine("Employee ID:{0}, Name: {1}, Salary: {2}", Id, Name, Salary);
     }
 }
-
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        Calculator calc = new Calculator();
-
-        int result = calc.Add(10, 20);
-
-        Console.WriteLine("Sum = " + result);
+        Employee emp = new Employee();
+        emp.Id = 101;
+        emp.Name = "John Doe";
+        emp.Salary = 50000.0;
+        emp.Display();
     }
 }
