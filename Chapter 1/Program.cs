@@ -1,17 +1,15 @@
-﻿class Company
+﻿class Employee
 {
-    public static string CompanyName;
+    private readonly int _id;
 
-   
-    static Company()
+    public Employee(int id)
     {
-        CompanyName = "ABC";
-        Console.WriteLine("Static Constructor Executed");
+        _id = id;
     }
 
-    public Company()
+    public void Display()
     {
-        Console.WriteLine("Normal Constructor Executed");
+        Console.WriteLine("Employee ID: " + _id);
     }
 }
 
@@ -19,10 +17,7 @@ class Program
 {
     static void Main()
     {
-        Company c1 = new Company();
-        Company c2 = new Company();
-        Company c3 = new Company();
-
-        Console.WriteLine(Company.CompanyName);
+        Employee e = new Employee(101);
+        e.Display();
     }
 }
