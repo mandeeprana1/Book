@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Text;
+using System.Text.RegularExpressions;
 
 class Program
 {
     static void Main()
     {
-        StringBuilder sb = new StringBuilder("Hello");
+        string text = "My age is 25";
 
-        sb.Append(" World");
-        sb.Replace("World", "Mandeep");
+        Match match = Regex.Match(text, @"\d+");
 
-        Console.WriteLine(sb);
+        Console.WriteLine(match.Value);
     }
 }
