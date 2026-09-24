@@ -5,13 +5,13 @@ class Program
 {
     static void Main()
     {
-        HashSet<int> set = new HashSet<int>();
+        SortedSet<int> set = new SortedSet<int>();
 
+        set.Add(30);
         set.Add(10);
         set.Add(20);
-        set.Add(10);
-        set.Add(30);
 
-        Console.WriteLine(set.Count);
+        foreach (int x in set)
+            Console.Write(x + " ");
     }
 }
