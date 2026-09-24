@@ -5,13 +5,13 @@ class Program
 {
     static void Main()
     {
-        Dictionary<int, string> d = new Dictionary<int, string>
-        {
-            { 1, "C#" },
-            { 2, "SQL" },
-            { 3, ".NET" }
-        };
+        HashSet<int> set = new HashSet<int>();
 
-        Console.WriteLine(d[2]);
+        set.Add(10);
+        set.Add(20);
+        set.Add(10);
+        set.Add(30);
+
+        Console.WriteLine(set.Count);
     }
 }
