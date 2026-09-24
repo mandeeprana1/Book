@@ -5,14 +5,10 @@ class Program
 {
     static void Main()
     {
-        string text = "10 apples and 20 oranges";
+        string value = "9876543210";
 
-        MatchCollection matches =
-            Regex.Matches(text, @"\d+");
+        bool result = Regex.IsMatch(value, @"^\d{10}$");
 
-        foreach (Match match in matches)
-        {
-            Console.WriteLine(match.Value);
-        }
+        Console.WriteLine(result);
     }
 }
