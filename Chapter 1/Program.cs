@@ -1,14 +1,20 @@
 ﻿using System;
-using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main()
     {
-        string value = "9876543210";
+        List<int> numbers =
+            new List<int> { 10, 20, 30, 40 };
 
-        bool result = Regex.IsMatch(value, @"^\d{10}$");
+        numbers.Insert(2, 25);
+        numbers.Remove(10);
 
-        Console.WriteLine(result);
+        foreach (int n in numbers)
+        {
+            Console.WriteLine(n);
+        }
     }
 }
+ 
