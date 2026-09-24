@@ -1,19 +1,25 @@
-﻿using System;
-
-static class StringExtensions
+﻿class Employee
 {
-    public static bool IsLong(this string text)
+    public string Name { get; set; }
+    public void Display()
     {
-        return text.Length > 10;
+        Console.WriteLine($"Employee Name: {Name}");
     }
 }
-
+class Developer : Employee
+{
+    public void WriteCode()
+    {
+        Console.WriteLine("Developer is writing code.");
+    }
+}
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        string name = "hvhvhirrr";
-
-        Console.WriteLine(name.IsLong());
+        Developer dev = new Developer();
+        dev.Name = "Alice";
+        dev.Display();
+        dev.WriteCode();
     }
 }
