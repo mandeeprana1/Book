@@ -1,15 +1,13 @@
-﻿class Employee
+﻿using System;
+
+class Employee
 {
-    private readonly int _id;
+    public string Name { get; set; }
+    public double Salary { get; set; }
 
-    public Employee(int id)
+    public override string ToString()
     {
-        _id = id;
-    }
-
-    public void Display()
-    {
-        Console.WriteLine("Employee ID: " + _id);
+        return $"Employee: {Name}, Salary: {Salary}";
     }
 }
 
@@ -17,7 +15,12 @@ class Program
 {
     static void Main()
     {
-        Employee e = new Employee(101);
-        e.Display();
+        Employee emp = new Employee
+        {
+            Name = "Mandeep",
+            Salary = 50000
+        };
+
+        Console.WriteLine(emp.ToString());
     }
 }
