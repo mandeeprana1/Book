@@ -1,25 +1,19 @@
-﻿class Employee
+﻿interface Ipayment
 {
-    public string Name { get; set; }
-    public void Display()
+    void Pay();
+}
+class CreditCardPayment : Ipayment
+{
+    public void Pay()
     {
-        Console.WriteLine($"Employee Name: {Name}");
+        Console.WriteLine("Paying with credit card");
     }
 }
-class Developer : Employee
+class program
 {
-    public void WriteCode()
+    static void Main()
     {
-        Console.WriteLine("Developer is writing code.");
-    }
-}
-class Program
-{
-    static void Main(string[] args)
-    {
-        Developer dev = new Developer();
-        dev.Name = "Alice";
-        dev.Display();
-        dev.WriteCode();
+        Ipayment payment = new CreditCardPayment();
+        payment.Pay();
     }
 }
