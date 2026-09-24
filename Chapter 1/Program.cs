@@ -5,10 +5,14 @@ class Program
 {
     static void Main()
     {
-        string text = "My age is 25";
+        string text = "10 apples and 20 oranges";
 
-        Match match = Regex.Match(text, @"\d+");
+        MatchCollection matches =
+            Regex.Matches(text, @"\d+");
 
-        Console.WriteLine(match.Value);
+        foreach (Match match in matches)
+        {
+            Console.WriteLine(match.Value);
+        }
     }
 }
