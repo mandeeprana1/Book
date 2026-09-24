@@ -5,13 +5,13 @@ class Program
 {
     static void Main()
     {
-        Queue<int> q = new Queue<int>();
+        Stack<int> s = new Stack<int>();
 
-        q.Enqueue(10);
-        q.Enqueue(20);
-        q.Enqueue(30);
+        s.Push(10);
+        s.Push(20);
+        s.Push(30);
 
-        Console.WriteLine(q.Dequeue());
-        Console.WriteLine(q.Peek());
+        Console.WriteLine(s.Pop());
+        Console.WriteLine(s.Peek());
     }
 }
