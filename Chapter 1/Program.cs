@@ -1,24 +1,11 @@
 ﻿using System;
 
-interface IPayment
-{
-    void Pay(decimal amount);
-}
-
-class CreditCardPayment : IPayment
-{
-    public void Pay(decimal amount)
-    {
-        Console.WriteLine($"Paid {amount} using Credit Card");
-    }
-}
-
 class Program
 {
     static void Main()
     {
-        IPayment payment = new CreditCardPayment();
+        string text = "Hello World";
 
-        payment.Pay(5000);
+        Console.WriteLine(text[6]);
     }
 }
