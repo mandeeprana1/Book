@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Text;
 
 class Program
 {
     static void Main()
     {
-        string text = "Hello World";
+        StringBuilder sb = new StringBuilder("Hello");
 
-        Console.WriteLine(text[6]);
+        sb.Append(" World");
+        sb.Replace("World", "Mandeep");
+
+        Console.WriteLine(sb);
     }
 }
