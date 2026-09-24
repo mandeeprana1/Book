@@ -5,13 +5,13 @@ class Program
 {
     static void Main()
     {
-        Stack<int> s = new Stack<int>();
+        Dictionary<int, string> d = new Dictionary<int, string>
+        {
+            { 1, "C#" },
+            { 2, "SQL" },
+            { 3, ".NET" }
+        };
 
-        s.Push(10);
-        s.Push(20);
-        s.Push(30);
-
-        Console.WriteLine(s.Pop());
-        Console.WriteLine(s.Peek());
+        Console.WriteLine(d[2]);
     }
 }
