@@ -2,17 +2,22 @@
 
 class Employee
 {
-    public virtual void Work()
+    public string Name;
+
+    public Employee(string name)
     {
-        Console.WriteLine("Employee is working");
+        Name = name;
     }
 }
 
 class Developer : Employee
 {
-    public override void Work()
+    public string Language;
+
+    public Developer(string name, string language)
+        : base(name)
     {
-        Console.WriteLine("Developer is working");
+        Language = language;
     }
 }
 
@@ -20,8 +25,9 @@ class Program
 {
     static void Main()
     {
-        Employee e = new Developer();
+        Developer d = new Developer("Mandeep", "C#");
 
-        e.Work();
+        Console.WriteLine(d.Name);
+        Console.WriteLine(d.Language);
     }
 }
