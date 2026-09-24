@@ -1,19 +1,25 @@
-﻿using System;
+﻿class Employee
+{
+    private double _salary;
 
+    public double Salary
+    {
+        get { return _salary; }
+        set
+        {
+            if (value >= 0)
+                _salary = value;
+        }
+    }
+}
 class Program
 {
-    static void Display(string name, int age = 18)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Name: " + name);
-        Console.WriteLine("Age: " + age);
-    }
-
-    static void Main()
-    {
-      
-        Display("Ram");
-
-      
-        Display("Shyam", 25);
+        Employee emp = new Employee();
+        emp.Salary = 50000;
+        Console.WriteLine($"Employee Salary: {emp.Salary}");
+        emp.Salary = -1000;
+        Console.WriteLine($"Employee Salary after invalid update: {emp.Salary}");
     }
 }
