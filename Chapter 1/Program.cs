@@ -1,25 +1,28 @@
-﻿class Employee
+﻿class Company
 {
-    private double _salary;
+    public static string CompanyName;
 
-    public double Salary
+   
+    static Company()
     {
-        get { return _salary; }
-        set
-        {
-            if (value >= 0)
-                _salary = value;
-        }
+        CompanyName = "ABC";
+        Console.WriteLine("Static Constructor Executed");
+    }
+
+    public Company()
+    {
+        Console.WriteLine("Normal Constructor Executed");
     }
 }
+
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Employee emp = new Employee();
-        emp.Salary = 50000;
-        Console.WriteLine($"Employee Salary: {emp.Salary}");
-        emp.Salary = -1000;
-        Console.WriteLine($"Employee Salary after invalid update: {emp.Salary}");
+        Company c1 = new Company();
+        Company c2 = new Company();
+        Company c3 = new Company();
+
+        Console.WriteLine(Company.CompanyName);
     }
 }
