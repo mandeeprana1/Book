@@ -1,13 +1,10 @@
 ﻿using System;
 
-class Employee
+static class StringExtensions
 {
-    public string Name { get; set; }
-    public double Salary { get; set; }
-
-    public override string ToString()
+    public static bool IsLong(this string text)
     {
-        return $"Employee: {Name}, Salary: {Salary}";
+        return text.Length > 10;
     }
 }
 
@@ -15,12 +12,8 @@ class Program
 {
     static void Main()
     {
-        Employee emp = new Employee
-        {
-            Name = "Mandeep",
-            Salary = 50000
-        };
+        string name = "hvhvhirrr";
 
-        Console.WriteLine(emp.ToString());
+        Console.WriteLine(name.IsLong());
     }
 }
