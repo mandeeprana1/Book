@@ -1,23 +1,15 @@
 ﻿using System;
 
-class Employee
+interface IPayment
 {
-    public string Name;
-
-    public Employee(string name)
-    {
-        Name = name;
-    }
+    void Pay(decimal amount);
 }
 
-class Developer : Employee
+class CreditCardPayment : IPayment
 {
-    public string Language;
-
-    public Developer(string name, string language)
-        : base(name)
+    public void Pay(decimal amount)
     {
-        Language = language;
+        Console.WriteLine($"Paid {amount} using Credit Card");
     }
 }
 
@@ -25,9 +17,8 @@ class Program
 {
     static void Main()
     {
-        Developer d = new Developer("Mandeep", "C#");
+        IPayment payment = new CreditCardPayment();
 
-        Console.WriteLine(d.Name);
-        Console.WriteLine(d.Language);
+        payment.Pay(5000);
     }
 }
