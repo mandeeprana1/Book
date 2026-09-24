@@ -5,16 +5,13 @@ class Program
 {
     static void Main()
     {
-        List<int> numbers =
-            new List<int> { 10, 20, 30, 40 };
+        Queue<int> q = new Queue<int>();
 
-        numbers.Insert(2, 25);
-        numbers.Remove(10);
+        q.Enqueue(10);
+        q.Enqueue(20);
+        q.Enqueue(30);
 
-        foreach (int n in numbers)
-        {
-            Console.WriteLine(n);
-        }
+        Console.WriteLine(q.Dequeue());
+        Console.WriteLine(q.Peek());
     }
 }
- 
