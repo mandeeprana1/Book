@@ -5,13 +5,22 @@ class Program
 {
     static void Main()
     {
-        SortedSet<int> set = new SortedSet<int>();
+        Dictionary<int, string> employees =
+            new Dictionary<int, string>();
 
-        set.Add(30);
-        set.Add(10);
-        set.Add(20);
+        employees.Add(101, "Mandeep");
+        employees.Add(102, "Rahul");
+        employees.Add(103, "Aman");
 
-        foreach (int x in set)
-            Console.Write(x + " ");
+        int employeeId = 102;
+
+        if (employees.ContainsKey(employeeId))
+        {
+            Console.WriteLine("Employee Name: " + employees[employeeId]);
+        }
+        else
+        {
+            Console.WriteLine("Employee not found");
+        }
     }
 }
