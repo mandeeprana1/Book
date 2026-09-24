@@ -1,19 +1,27 @@
-﻿interface Ipayment
+﻿using System;
+
+class Employee
 {
-    void Pay();
-}
-class CreditCardPayment : Ipayment
-{
-    public void Pay()
+    public virtual void Work()
     {
-        Console.WriteLine("Paying with credit card");
+        Console.WriteLine("Employee is working");
     }
 }
-class program
+
+class Developer : Employee
+{
+    public override void Work()
+    {
+        Console.WriteLine("Developer is working");
+    }
+}
+
+class Program
 {
     static void Main()
     {
-        Ipayment payment = new CreditCardPayment();
-        payment.Pay();
+        Employee e = new Developer();
+
+        e.Work();
     }
 }
