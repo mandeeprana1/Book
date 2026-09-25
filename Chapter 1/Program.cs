@@ -1,22 +1,34 @@
 ﻿using System;
 
+class GenericCalculator<T>
+{
+    private T value;
+
+    public GenericCalculator(T value)
+    {
+        this.value = value;
+    }
+
+    public T GetValue()
+    {
+        return value;
+    }
+}
+
 class Program
 {
     static void Main()
     {
-        int a = 10;
-        int b = 20;
+       
+        GenericCalculator<int> intCalculator =
+            new GenericCalculator<int>(100);
 
-        Swap(ref a, ref b);
+        Console.WriteLine(intCalculator.GetValue());
 
-        Console.WriteLine(a); 
-        Console.WriteLine(b); 
-    }
+    
+        GenericCalculator<string> stringCalculator =
+            new GenericCalculator<string>("Hello World");
 
-    static void Swap(ref int x, ref int y)
-    {
-        int temp = x;
-        x = y;
-        y = temp;
+        Console.WriteLine(stringCalculator.GetValue());
     }
 }
