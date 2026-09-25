@@ -1,40 +1,20 @@
 ﻿using System;
 
-class Repository<T> where T : class
-{
-    public void Add(T item)
-    {
-        Console.WriteLine("Item added: " + item);
-    }
-}
-
-class Student
-{
-    public string Name { get; set; }
-
-    public Student(string name)
-    {
-        Name = name;
-    }
-
-    public override string ToString()
-    {
-        return Name;
-    }
-}
-
 class Program
 {
+    static T GetDefault<T>()
+    {
+        return default(T);
+    }
+
     static void Main()
     {
-       
-        Repository<Student> studentRepository =
-            new Repository<Student>();
+        int intValue = GetDefault<int>();
+        string stringValue = GetDefault<string>();
+        bool boolValue = GetDefault<bool>();
 
-        Student student = new Student("Rahul");
-
-        studentRepository.Add(student);
-
-       
+        Console.WriteLine("int: " + intValue);
+        Console.WriteLine("string: " + (stringValue ?? "null"));
+        Console.WriteLine("bool: " + boolValue);
     }
 }
