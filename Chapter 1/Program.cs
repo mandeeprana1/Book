@@ -20,9 +20,9 @@ class Program
     {
        
         Calculator calc = Add;
+        calc += Subtract;
         calc(20, 10);
-
-        calc = Subtract;
-        calc(20, 10);
+        
+        
     }
 }
