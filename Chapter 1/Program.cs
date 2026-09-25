@@ -1,46 +1,31 @@
 ﻿using System;
 
-class Animal
-{
-    public void Eat()
-    {
-        Console.WriteLine("Animal is eating");
-    }
-}
-
-class Dog : Animal
-{
-    public void Bark()
-    {
-        Console.WriteLine("Dog is barking");
-    }
-}
-
-class Cat : Animal
-{
-    public void Meow()
-    {
-        Console.WriteLine("Cat is meowing");
-    }
-}
-
 class Program
 {
     static void Main()
     {
-      
-        Animal animal = new Dog();
+        int number = 100;
+        Console.WriteLine("Original value: " + number);
 
-      
-        if (animal is Dog)
-        {
-            Console.WriteLine("Object is Dog");
-        }
+    
+        object boxedValue = number;
+        Console.WriteLine("Boxed value: " + boxedValue);
 
      
-   
+        int unboxedValue = (int)boxedValue;
+        Console.WriteLine("Unboxed value: " + unboxedValue);
 
-        
-        
+     
+        object wrongValue = "Hello";
+
+        try
+        {
+            int wrongNumber = (int)wrongValue;
+            Console.WriteLine(wrongNumber);
+        }
+        catch (InvalidCastException)
+        {
+            Console.WriteLine("Wrong unboxing: Cannot convert string to int.");
+        }
     }
 }
