@@ -2,27 +2,38 @@
 
 class Program
 {
-  
-    delegate void Calculator(int a, int b);
+    delegate void MessageDelegate();
 
-  
-    static void Add(int a, int b)
+    static void First()
     {
-        Console.WriteLine("Addition: " + (a + b));
+        Console.WriteLine("First");
     }
 
-    static void Subtract(int a, int b)
+    static void Second()
     {
-        Console.WriteLine("Subtraction: " + (a - b));
+        Console.WriteLine("Second");
+    }
+
+    static void Third()
+    {
+        Console.WriteLine("Third");
     }
 
     static void Main()
     {
-       
-        Calculator calc = Add;
-        calc += Subtract;
-        calc(20, 10);
-        
-        
+        MessageDelegate message = First;
+
+        message += Second;
+        message += Third;
+
+        Console.WriteLine("Before removing Second:");
+
+        message();
+
+        message -= Second;
+
+        Console.WriteLine("\nAfter removing Second:");
+
+        message();
     }
 }
