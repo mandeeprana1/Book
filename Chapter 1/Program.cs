@@ -2,19 +2,17 @@
 
 class Program
 {
+    static (string Name, int Age, int Marks) GetStudent()
+    {
+        return ("Mandeep", 25, 85);
+    }
+
     static void Main()
     {
-        int[] numbers = { 50, 10, 40, 20, 30 };
+        var student = GetStudent();
 
-       
-    
-        Array.Sort(numbers);
-
-        
-
-        foreach (int number in numbers)
-        {
-            Console.Write(number + " ");
-        }
+        Console.WriteLine("Name: " + student.Name);
+        Console.WriteLine("Age: " + student.Age);
+        Console.WriteLine("Marks: " + student.Marks);
     }
 }
