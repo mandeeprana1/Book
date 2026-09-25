@@ -1,22 +1,20 @@
 ﻿using System;
 
-class ComplexNumber
+class Employee
 {
-    public int Real;
-    public int Imaginary;
+    public int EmployeeId;
+    public string Name;
 
-    public ComplexNumber(int r, int i)
+    public Employee(int id, string name)
     {
-        Real = r;
-        Imaginary = i;
+        EmployeeId = id;
+        Name = name;
     }
 
-    public static ComplexNumber operator +(ComplexNumber c1, ComplexNumber c2)
+   
+    public static implicit operator int(Employee employee)
     {
-        return new ComplexNumber(
-            c1.Real + c2.Real,
-            c1.Imaginary + c2.Imaginary
-        );
+        return employee.EmployeeId;
     }
 }
 
@@ -24,11 +22,10 @@ class Program
 {
     static void Main()
     {
-        ComplexNumber c1 = new ComplexNumber(10, 20);
-        ComplexNumber c2 = new ComplexNumber(5, 10);
+        Employee employee = new Employee(101, "Mandeep");
 
-        ComplexNumber result = c1 + c2;
+        int id = employee;
 
-        Console.WriteLine(result.Real + " + " + result.Imaginary + "i");
+        Console.WriteLine("Employee ID: " + id);
     }
 }
