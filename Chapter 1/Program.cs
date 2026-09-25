@@ -1,18 +1,34 @@
 ﻿using System;
 
-class Program
+class ComplexNumber
 {
-    static (string Name, int Age, int Marks) GetStudent()
+    public int Real;
+    public int Imaginary;
+
+    public ComplexNumber(int r, int i)
     {
-        return ("Mandeep", 25, 85);
+        Real = r;
+        Imaginary = i;
     }
 
+    public static ComplexNumber operator +(ComplexNumber c1, ComplexNumber c2)
+    {
+        return new ComplexNumber(
+            c1.Real + c2.Real,
+            c1.Imaginary + c2.Imaginary
+        );
+    }
+}
+
+class Program
+{
     static void Main()
     {
-        var student = GetStudent();
+        ComplexNumber c1 = new ComplexNumber(10, 20);
+        ComplexNumber c2 = new ComplexNumber(5, 10);
 
-        Console.WriteLine("Name: " + student.Name);
-        Console.WriteLine("Age: " + student.Age);
-        Console.WriteLine("Marks: " + student.Marks);
+        ComplexNumber result = c1 + c2;
+
+        Console.WriteLine(result.Real + " + " + result.Imaginary + "i");
     }
 }
