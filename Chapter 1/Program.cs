@@ -4,34 +4,23 @@ class Program
 {
     static void Main()
     {
-        int[,] numbers =
+        // Jagged Array
+        int[][] numbers = new int[3][];
+
+        numbers[0] = new int[] { 10, 20 };
+        numbers[1] = new int[] { 30, 40, 50 };
+        numbers[2] = new int[] { 60 };
+
+        for (int i = 0; i < numbers.Length; i++)
         {
-            { 1, 2, 3 },
-            { 4, 5, 6 },
-            { 7, 8, 9 }
-        };
+            Console.Write("Row " + (i + 1) +" " );
 
-        int totalSum = 0;
-
-        Console.WriteLine("Array:");
-
-    
-        for (int i = 0; i < 3; i++)
-        {
-            int rowSum = 0;
-
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < numbers[i].Length; j++)
             {
-                Console.Write(numbers[i, j] + " ");
-
-                rowSum += numbers[i, j];
-                totalSum += numbers[i, j];
+                Console.Write(numbers[i][j] + " ");
             }
 
             Console.WriteLine();
-            Console.WriteLine("Row " + (i + 1) + " Sum = " + rowSum);
         }
-
-        Console.WriteLine("Total = " + totalSum);
     }
 }
