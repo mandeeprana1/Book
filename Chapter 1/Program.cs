@@ -1,26 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 
 class Program
 {
     static void Main()
     {
-        Dictionary<int, string> employees =
-            new Dictionary<int, string>();
+        int a = 10;
+        int b = 20;
 
-        employees.Add(101, "Mandeep");
-        employees.Add(102, "Rahul");
-        employees.Add(103, "Aman");
+        Swap(ref a, ref b);
 
-        int employeeId = 102;
+        Console.WriteLine(a); 
+        Console.WriteLine(b); 
+    }
 
-        if (employees.ContainsKey(employeeId))
-        {
-            Console.WriteLine("Employee Name: " + employees[employeeId]);
-        }
-        else
-        {
-            Console.WriteLine("Employee not found");
-        }
+    static void Swap(ref int x, ref int y)
+    {
+        int temp = x;
+        x = y;
+        y = temp;
     }
 }
