@@ -1,17 +1,25 @@
 ﻿using System;
 
-class GenericCalculator<T>
+class Repository<T> where T : class
 {
-    private T value;
-
-    public GenericCalculator(T value)
+    public void Add(T item)
     {
-        this.value = value;
+        Console.WriteLine("Item added: " + item);
+    }
+}
+
+class Student
+{
+    public string Name { get; set; }
+
+    public Student(string name)
+    {
+        Name = name;
     }
 
-    public T GetValue()
+    public override string ToString()
     {
-        return value;
+        return Name;
     }
 }
 
@@ -20,15 +28,13 @@ class Program
     static void Main()
     {
        
-        GenericCalculator<int> intCalculator =
-            new GenericCalculator<int>(100);
+        Repository<Student> studentRepository =
+            new Repository<Student>();
 
-        Console.WriteLine(intCalculator.GetValue());
+        Student student = new Student("Rahul");
 
-    
-        GenericCalculator<string> stringCalculator =
-            new GenericCalculator<string>("Hello World");
+        studentRepository.Add(student);
 
-        Console.WriteLine(stringCalculator.GetValue());
+       
     }
 }
