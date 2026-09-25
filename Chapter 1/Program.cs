@@ -4,23 +4,17 @@ class Program
 {
     static void Main()
     {
-        // Jagged Array
-        int[][] numbers = new int[3][];
+        int[] numbers = { 50, 10, 40, 20, 30 };
 
-        numbers[0] = new int[] { 10, 20 };
-        numbers[1] = new int[] { 30, 40, 50 };
-        numbers[2] = new int[] { 60 };
+       
+    
+        Array.Sort(numbers);
 
-        for (int i = 0; i < numbers.Length; i++)
+        
+
+        foreach (int number in numbers)
         {
-            Console.Write("Row " + (i + 1) +" " );
-
-            for (int j = 0; j < numbers[i].Length; j++)
-            {
-                Console.Write(numbers[i][j] + " ");
-            }
-
-            Console.WriteLine();
+            Console.Write(number + " ");
         }
     }
 }
