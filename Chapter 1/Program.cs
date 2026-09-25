@@ -2,38 +2,16 @@
 
 class Program
 {
-    delegate void MessageDelegate();
-
-    static void First()
-    {
-        Console.WriteLine("First");
-    }
-
-    static void Second()
-    {
-        Console.WriteLine("Second");
-    }
-
-    static void Third()
-    {
-        Console.WriteLine("Third");
-    }
+    delegate int Calculate(int x, int y);
 
     static void Main()
     {
-        MessageDelegate message = First;
+        Calculate add = (x, y) => x + y;
 
-        message += Second;
-        message += Third;
+        
+        Calculate multiply = (x, y) => x * y;
 
-        Console.WriteLine("Before removing Second:");
-
-        message();
-
-        message -= Second;
-
-        Console.WriteLine("\nAfter removing Second:");
-
-        message();
+        Console.WriteLine("Addition = " + add(10, 20));
+        Console.WriteLine("Multiplication = " + multiply(10, 20));
     }
 }
