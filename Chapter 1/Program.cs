@@ -1,20 +1,26 @@
 ﻿using System;
 
-class Employee
+class Animal
 {
-    public int EmployeeId;
-    public string Name;
-
-    public Employee(int id, string name)
+    public void Eat()
     {
-        EmployeeId = id;
-        Name = name;
+        Console.WriteLine("Animal is eating");
     }
+}
 
-   
-    public static implicit operator int(Employee employee)
+class Dog : Animal
+{
+    public void Bark()
     {
-        return employee.EmployeeId;
+        Console.WriteLine("Dog is barking");
+    }
+}
+
+class Cat : Animal
+{
+    public void Meow()
+    {
+        Console.WriteLine("Cat is meowing");
     }
 }
 
@@ -22,10 +28,19 @@ class Program
 {
     static void Main()
     {
-        Employee employee = new Employee(101, "Mandeep");
+      
+        Animal animal = new Dog();
 
-        int id = employee;
+      
+        if (animal is Dog)
+        {
+            Console.WriteLine("Object is Dog");
+        }
 
-        Console.WriteLine("Employee ID: " + id);
+     
+   
+
+        
+        
     }
 }
