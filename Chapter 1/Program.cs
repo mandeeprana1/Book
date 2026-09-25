@@ -1,17 +1,41 @@
 ﻿using System;
 
+class BankAccount
+{
+    
+    public event EventHandler MoneyDeposited;
+
+    public void Deposit(int amount)
+    {
+        Console.WriteLine("Deposit successful: " + amount);
+
+      
+        MoneyDeposited.Invoke(this, EventArgs.Empty);
+    }
+}
+
+class Customer
+{
+   
+    public void HandleDeposit(object sender, EventArgs e)
+    {
+        Console.WriteLine("Customer notified");
+    }
+}
+
 class Program
 {
-    delegate int Calculate(int x, int y);
-
     static void Main()
     {
-        Calculate add = (x, y) => x + y;
+       
+        BankAccount account = new BankAccount();
 
-        
-        Calculate multiply = (x, y) => x * y;
+      
+        Customer customer = new Customer();
 
-        Console.WriteLine("Addition = " + add(10, 20));
-        Console.WriteLine("Multiplication = " + multiply(10, 20));
+        account.MoneyDeposited += customer.HandleDeposit;
+
+     
+        account.Deposit(5000);
     }
 }
